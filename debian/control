@@ -1,6 +1,7 @@
 Source: whitesource-fs-agent
 Maintainer: Ilya Evseev <ilya.evseev@gmail.com>
 Homepage: https://github.com/whitesource/fs-agent
+Standards-Version: 3.9.5
 Build-Depends: debhelper
 
 Package: whitesource-fs-agent
