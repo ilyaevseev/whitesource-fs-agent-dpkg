@@ -1,0 +1,4 @@
+whitesource-fs-agent.config  etc/whitesource
+whitesource                  etc/default
+whitesource-fs-agent         usr/bin
+whitesource-fs-agent-*.jar   usr/share/whitesource

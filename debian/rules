@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_link:
+	dh_link
+	cd ./debian/*/usr/share/whitesource && \
+	ln -sf whitesource-fs-agent-*.jar \
+	       whitesource-fs-agent.jar
+
+## END ##

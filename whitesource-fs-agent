@@ -1,0 +1,37 @@
+#!/bin/sh
+
+OPT="/etc/default/whitesource"
+CFG="/etc/whitesource/whitesource-fs-agent.config"
+JAR="/usr/share/whitesource/whitesource-fs-agent.jar"
+
+Add() {
+	local debname="$1" jarpath="$2"
+	case "${CLASSPATH}" in *"${jarpath}"* ) return ;; esac
+	test -s "$jarpath" || { echo "Missing $jarpath, is $debname installed?" 1>&2; return 1; }
+	test -z "$CLASSPATH" || CLASSPATH="${CLASSPATH}:"
+	export CLASSPATH="${CLASSPATH}${jarpath}"
+	return 0
+}
+
+Add  groovy                          /usr/share/groovy/embeddable/groovy-all-1.8.6.jar
+Add  liblog4j1.2-java                /usr/share/java/log4j-1.2.jar
+Add  libjdom1-java                   /usr/share/java/jdom1.jar
+Add  libservlet2.5-java              /usr/share/java/servlet-api-2.5.jar
+Add  junit4                          /usr/share/java/junit4.jar
+Add  libxz-java                      /usr/share/java/xz.jar
+Add  libjanino-java                  /usr/share/java/janino.jar
+Add  libexcalibur-logkit-java        /usr/share/java/logkit.jar
+Add  liboro-java                     /usr/share/java/oro.jar
+Add  librhino-java                   /usr/share/java/js.jar
+Add  libgeronimo-jms-1.1-spec-java   /usr/share/java/geronimo-jms-1.1-spec.jar
+Add  libgnumail-java                 /usr/share/java/gnumail.jar
+Add  libwerken.xpath-java            /usr/share/java/werken-xpath.jar
+Add  libjzlib-java                   /usr/share/java/jzlib.jar
+Add  libavalon-framework-java        /usr/share/java/avalon-framework.jar
+Add  libstringtemplate-java          /usr/share/java/stringtemplate.jar
+
+test -f "$OPT" && . "$OPT"
+
+java -jar "$JAR" -c "$CFG" $WSS_JAVA_OPTS "$@"
+
+## END ##

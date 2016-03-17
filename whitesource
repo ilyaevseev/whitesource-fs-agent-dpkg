@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+#  This is /etc/default/whitesource
+#
+#  See also /usr/bin/whitesource-*
+#
+
+WSS_JAVA_OPTS=""
+
+#  Tune for handling big inputs:
+#   - invoke JVM in 64-bit mode
+#   - set initial heap size as 512 MB
+#   - set maximum heap size as 4 GB
+# WSS_JAVA_OPTS="-d64 -Xms512m -Xmx4g"
+
+## END ##

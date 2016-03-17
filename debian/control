@@ -1,0 +1,35 @@
+Source: whitesource-fs-agent
+Maintainer: Ilya Evseev <ilya.evseev@gmail.com>
+Homepage: https://github.com/whitesource/fs-agent
+Build-Depends: debhelper
+
+Package: whitesource-fs-agent
+Priority: optional
+Section: misc
+Architecture: all
+Depends: groovy,
+  liblog4j1.2-java,
+  libjdom1-java,
+  libservlet2.5-java,
+  junit4,
+  libxz-java,
+  libjanino-java,
+  libexcalibur-logkit-java,
+  liboro-java,
+  librhino-java,
+  libgeronimo-jms-1.1-spec-java,
+  libgnumail-java,
+  libwerken.xpath-java,
+  libjzlib-java,
+  libavalon-framework-java,
+  libstringtemplate-java
+Description: Scan a specified directory for open source libs and send it to White Source.
+  The fs-agent is a simple java command line tool which extracts descriptive information
+  from your open source libraries located on your file system and integrates them with WhiteSource.
+  .
+  On execution, the fs-agent will scan a specified directory (aka the lib directory)
+  for open source libraries (using a GLOB patterns to identify the open source library files) and send it to White Source:
+  .
+  * New projects will be created
+  * Existing projects will be updated
+  * Policies will be enforced on every action
