@@ -1,2 +1,9 @@
 *.jar
+
+# Generated files:
+debian/whitesource-fs-agent.debhelper.log
+debian/whitesource-fs-agent.substvars
+debian/files
+
+# Binary package buildtree:
 debian/*-*/
