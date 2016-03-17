@@ -3,10 +3,12 @@ Maintainer: Ilya Evseev <ilya.evseev@gmail.com>
 Homepage: https://github.com/whitesource/fs-agent
 Standards-Version: 3.9.5
 Build-Depends: debhelper
+Section: devel
+Priority: optional
 
 Package: whitesource-fs-agent
 Priority: optional
-Section: misc
+Section: devel
 Architecture: all
 Depends: groovy,
   liblog4j1.2-java,
