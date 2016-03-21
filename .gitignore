@@ -1,4 +1,5 @@
 *.jar
+check_tattle_deps.class
 
 # Generated files:
 debian/whitesource-fs-agent.debhelper.log
