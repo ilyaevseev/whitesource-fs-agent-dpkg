@@ -26,3 +26,15 @@
 * apt-get install whitesource-fs-agent
 * customize **/etc/default/whitesource** and **/etc/whitesource/whitesource-fs-agent.config** files
 * run **/usr/bin/whitesource-fs-agent**
+ 
+### Hot to get and check JAR dependencies:
+
+* Install the latest http://tattletale.jboss.org/
+* Put JAR file to separate directory
+* cd /path/to/tattletale
+* java -Xmx512m -jar tattletale.jar /path/to/whitesource/ /path/to/created/report/
+* cd /path/to/whitesource-fs-agent-dpkg
+* javac check_tattle_deps.java
+* CLASSPATH=. java check_tattle_deps /path/to/created/report/dependson/index.html
+* add JARs to CLASSPATH until all FAIL's converted to good's
+* put resulting list to **[whitesource-fs-agent](whitesource-fs-agent)** file.
