@@ -17,3 +17,12 @@
 * dpkg-buildpackage -S
 
 * dput ppa:whitesource/whitesource-fs-agent  ../whitesource-fs-agent_A.B.C.D-X_source.changes
+
+### How to install package from Launchpad.net:
+
+* echo "deb http://ppa.launchpad.net/whitesource/whitesource-fs-agent/ubuntu trusty main" >> /etc/apt/sources.list.d/Whitesource.list
+* apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv C339C2C0
+* apt-get update
+* apt-get install whitesource-fs-agent
+* customize **/etc/default/whitesource** and **/etc/whitesource/whitesource-fs-agent.config** files
+* run **/usr/bin/whitesource-fs-agent**
