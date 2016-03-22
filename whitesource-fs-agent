@@ -3,6 +3,36 @@
 OPT="/etc/default/whitesource"
 CFG="/etc/whitesource/whitesource-fs-agent.config"
 JAR="/usr/share/whitesource/whitesource-fs-agent.jar"
+VER="$(LANG=C ls -l "$JAR" 2>/dev/null | sed 's,.*-,,; s,\.jar,,')"
+
+
+Usage() {
+	echo "\
+whitesource-fs-agent $VER
+
+Extracts descriptive information from your open source libraries
+located on your file system and integrates them with WhiteSource.
+
+Usage: $0 options...
+
+Options:
+-c config-file (default: $CFG)
+-d path[,path,...]
+-f files.list
+
+See complete description here:
+http://docs.whitesourcesoftware.com/display/serviceDocs/File+System+Agent
+"
+
+	exit 0
+}
+
+custom_config=
+for a in "$@"; do
+	test "$a" = "--help" && Usage
+	test "$a" = "-c" && custom_config=1
+done
+
 
 Add() {
 	local debname="$1" jarpath="$2"
@@ -32,6 +62,10 @@ Add  libstringtemplate-java          /usr/share/java/stringtemplate.jar
 
 test -f "$OPT" && . "$OPT"
 
-java -jar "$JAR" -c "$CFG" $WSS_JAVA_OPTS "$@"
+if test -n "$custom_config"; then
+	java -jar "$JAR" $WSS_JAVA_OPTS "$@"
+else
+	java -jar "$JAR" -c "$CFG" $WSS_JAVA_OPTS "$@"
+fi
 
 ## END ##

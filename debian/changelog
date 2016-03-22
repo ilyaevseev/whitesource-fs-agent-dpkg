@@ -1,3 +1,9 @@
+whitesource-fs-agent (1.6.9.2-5) trusty; urgency=low
+
+  * Shell wrapper improved: -c for custom config, --help.
+
+ -- Ilya Evseev (lp:whitesource) <ilya.evseev@gmail.com>  Tue, 22 Mar 2016 15:36:00 +0300
+
 whitesource-fs-agent (1.6.9.2-4) trusty; urgency=low
 
   * Section fixed again.
