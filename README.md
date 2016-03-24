@@ -1,6 +1,6 @@
 ### How to build package and send it to Launchpad.net:
 
-* apt-get install git dpkg-dev debhelper
+* apt-get install git dpkg-dev debhelper dput
 
 * Setup your public GPG key that's registered in Launchpad
    * Create new key: `gpg --gen-key`
