@@ -2,7 +2,7 @@
 #
 #  This is /etc/default/whitesource
 #
-#  See also /usr/bin/whitesource-*
+#  Custom settings for /usr/bin/whitesource-* scripts.
 #
 
 WSS_JAVA_OPTS=""

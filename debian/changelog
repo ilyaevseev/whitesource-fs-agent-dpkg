@@ -1,3 +1,9 @@
+whitesource-fs-agent (1.6.9.2-6) trusty; urgency=low
+
+  * Anna coming to frontscene
+
+ -- Anna Rosin (lp:whitesource) <anna.rozin@whitesourcesoftware.com>  Thu, 24 Mar 2016 15:36:00 +0300
+
 whitesource-fs-agent (1.6.9.2-5) trusty; urgency=low
 
   * Shell wrapper improved: -c for custom config, --help.
