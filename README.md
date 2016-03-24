@@ -3,8 +3,12 @@
 * apt-get install git dpkg-dev debhelper
 
 * Setup your public GPG key that's registered in Launchpad
-   * gpg --import /path/to/gpg_private.key
-   * My own key is: 2FDF8A4B 2016-03-17 Ilya Evseev (lp:whitesource) <ilya.evseev@gmail.com>
+   * Create new key: `gpg --gen-key`
+   * Or import already existing key: `gpg --import /path/to/gpg_private.key`
+   * Check local keys: `gpg --list-secret-keys`
+   * Send it to Ubuntu keyserver: `gpg --send-keys --keyserver keyserver.ubuntu.com <PUB_HEX8_ID>`
+   * Select OpenPGP key on your personal Launchpad page
+   * Note: my own key that I use for signing Whitesource packages is `2FDF8A4B 2016-03-17 Ilya Evseev (lp:whitesource) <ilya.evseev@gmail.com>`
 
 * git clone https://github.com/ilyaevseev/whitesource-fs-agent-dpkg && cd whitesource-fs-agent-dpkg
 
